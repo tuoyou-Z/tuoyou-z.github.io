@@ -8,6 +8,7 @@
   <title>卡片搜尋器 </title>
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/ui-choose.css" rel="stylesheet">
 
   <style>
     .container {
@@ -37,28 +38,45 @@
       }
     }
 
-    /* .row {
-      background-color: rgba(86, 61, 124, .15);
-      border: 1px solid rgba(255, 0, 0, 0.2);
-      padding-top: .75rem;
-      padding-bottom: .75rem;
-
+    .ck-button {
+      border-radius: 4px;
+      margin: 0px;
+      background-color: #e2e6ea;
+      color: #000000;
+      overflow: auto;
+      float: left;
     }
 
-    [class^="col-"] {
-      padding-top: .75rem;
-      padding-bottom: .75rem;
-      background-color: rgba(86, 61, 124, .15);
-      border: 1px solid rgba(255, 0, 0, 0.2);
-    } */
+    label.ck-button {
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .ck-button>input[type=checkbox] {
+      display: none;
+    }
+
+    .ck-button>input[type=checkbox]+span {
+      display: inline-block;
+      padding: 0.6em;
+      user-select: none;
+      border-radius: 4px;
+      /* 防止文字被滑鼠選取反白 */
+    }
+
+    .ck-button>input[type=checkbox]:checked+span {
+      color: #fff;
+      background-color: #007bff;
+      padding: 0.6em;
+      border-radius: 4px;
+      width: 100%;
+    }
   </style>
-  <!-- Custom styles for this template -->
-  <link href="form-validation.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
   <div class="container">
-    <div class="py-5 text-center">
+    <div class="py-3 text-center">
       <h2>卡片搜尋器</h2>
     </div>
     <form>
@@ -165,52 +183,29 @@
             <label for="inputPassword" class="text-center col-md-4 col-sm-5 col-form-label">標記</label>
             <div class="col-md-8 col-sm-7">
               <div class="row">
-                <div class="col">
-                  <div class="row">
-                    <div class="col"><input type="checkbox" aria-label="Checkbox for following text input"></div>
-                    <div class="col"><input type="checkbox" aria-label="Checkbox for following text input"></div>
-                    <div class="col"><input type="checkbox" aria-label="Checkbox for following text input"></div>
+                <div class="col col-md col-sm-12">
+                  <div class="row justify-content-center">
+                    <div class="col-1"><input type="checkbox" aria-label="Checkbox for following text input"></div>
+                    <div class="col-1"><input type="checkbox" aria-label="Checkbox for following text input"></div>
+                    <div class="col-1"><input type="checkbox" aria-label="Checkbox for following text input"></div>
+                    <div class="w-100"></div>
+                    <div class="col-1"><input type="checkbox" aria-label="Checkbox for following text input"></div>
+                    <div class="col-1"></div>
+                    <div class="col-1"><input type="checkbox" aria-label="Checkbox for following text input"></div>
+                    <div class="w-100"></div>
+                    <div class="col-1"><input type="checkbox" aria-label="Checkbox for following text input"></div>
+                    <div class="col-1"><input type="checkbox" aria-label="Checkbox for following text input"></div>
+                    <div class="col-1"><input type="checkbox" aria-label="Checkbox for following text input"></div>
                   </div>
-                  <div class="row">
-                    <div class="col"><input type="checkbox" aria-label="Checkbox for following text input"></div>
-                    <div class="col"></div>
-                    <div class="col"><input type="checkbox" aria-label="Checkbox for following text input"></div>
-                  </div>
-                  <div class="row">
-                    <div class="col"><input type="checkbox" aria-label="Checkbox for following text input"></div>
-                    <div class="col"><input type="checkbox" aria-label="Checkbox for following text input"></div>
-                    <div class="col"><input type="checkbox" aria-label="Checkbox for following text input"></div>
-                  </div>
-
                 </div>
-                <div class="col-1"></div>
-                <div class="col">
+                <div class="col-1 col-md-1 col-sm-0"></div>
+                <div class="col col-md col-sm-12">
                   <select class="form-control" id="exampleFormControlSelect1">
                     <option value="or">OR</option>
                     <option value="and">AND</option>
                   </select>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm">
-          <!-- 電腦右欄 -->
-          <div class="form-group row">
-            <label for="inputPassword" class="text-center col-md-4 col-sm-5 col-form-label">屬性</label>
-            <div class="col-md-8 col-sm-7">
-              <input type="password" class="form-control" id="inputPassword" placeholder="卡片密碼">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <!-- 電腦左欄 -->
-          <div class="form-group row">
-            <label for="inputPassword" class="text-center col-md-4 col-sm-5 col-form-label">種族</label>
-            <div class="col-md-8 col-sm-7">
-              <input type="password" class="form-control" id="inputPassword" placeholder="種族">
             </div>
           </div>
         </div>
@@ -262,6 +257,231 @@
 
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm">
+          <!-- 電腦左欄 -->
+          <!-- 種族 -->
+          <div class="form-group row">
+            <span class="text-center col-md-4 col-sm-5 col-form-label">種族</span>
+            <div class="col-md-8 col-sm-7">
+              <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>戰士</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>魔法使</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>天使</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>惡魔</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>不死</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>機械</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>水</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>炎</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>岩石</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>鳥獸</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>植物</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>昆蟲</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>雷</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>龍</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>獸</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>獸戰士</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>恐龍</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>魚</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>海龍</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>爬蟲類</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>超能</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>幻神獸</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>創造神</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>幻龍</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1 mr-auto">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>電子界</span>
+                  </label>
+                </div>
+                <div class="col-auto my-1 mx-0 px-1 align-self-end">
+                  <button type="button" class="btn btn-outline-danger">清空選擇</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <!-- 電腦右欄 -->
+          <!-- 屬性 -->
+          <div class="form-group row">
+            <span class="text-center col-md-4 col-sm-5 col-form-label">屬性</span>
+            <div class="col-md-8 col-sm-7">
+              <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>地</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>水</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>炎</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>風</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>光</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>暗</span>
+                  </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-4 my-1 mx-0 px-1">
+                  <label class="ck-button text-center">
+                    <input type="checkbox" />
+                    <span>神</span>
+                  </label>
+                </div>
+
+                <div class="col-auto my-1 mx-0 px-1 align-self-end">
+                  <button type="button" class="btn btn-outline-danger">清空選擇</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
 
     </form>
@@ -279,7 +499,7 @@
     crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery.slim.min.js"><\/script>')</script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="form-validation.js"></script>
+  <script src="js/form-validation.js"></script>
 </body>
 
 </html>
